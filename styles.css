@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-info {
+  text-align: right;
+}
+
+.contact-info a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #666;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("assets/images/floor-buffer.jpg") center/cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Mission Section */
+.mission {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.mission-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Services Section */
+.services {
+  padding: 100px 0;
+  background: #f9f9f9;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Values Section */
+.values {
+  padding: 100px 0;
+  background: #222;
+  color: #fff;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.value-card {
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.value-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.value-card ul {
+  list-style: none;
+}
+
+.value-card li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.value-card li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+/* Floor Care Section */
+.floor-care {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.floor-care-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.floor-care-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.floor-care-card {
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  padding: 80px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.footer-contact {
+  margin-bottom: 30px;
+}
+
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #ccc;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Language Switcher Styles */
+.lang-switch {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* The switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 75px;
+  height: 32px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222;
+  transition: 0.3s;
+  border-radius: 32px;
+}
+
+/* The sliding circle */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Split the text into two elements for better control */
+.slider .lang-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+/* Hover effect */
+.switch:hover .slider {
+  background-color: #444;
+}
+
+/* Checked state */
+input:checked + .slider:before {
+  transform: translateX(43px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-grid,
+  .values-grid,
+  .floor-care-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid,
+  .values-grid,
+  .floor-care-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .contact-info {
+    display: none;
+  }
+}
