@@ -132,6 +132,12 @@ header {
   color: #222;
 }
 
+.service-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
 /* Values Section */
 .values {
   padding: 100px 0;
@@ -148,6 +154,10 @@ header {
 .value-card {
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 }
 
 .value-card h3 {
@@ -173,6 +183,11 @@ header {
   color: #fff;
 }
 
+.value-icon {
+  width: 125px;
+  height: 125px;
+}
+
 /* Floor Care Section */
 .floor-care {
   padding: 100px 0;
@@ -192,15 +207,23 @@ header {
 }
 
 .floor-care-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 30px;
   background: #f9f9f9;
   border-radius: 5px;
 }
 
+.floor-care-icon {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+}
 /* Footer */
 footer {
   background: #222;
-  padding: 80px 0;
+  padding: 60px 0;
   color: #fff;
   text-align: center;
 }
