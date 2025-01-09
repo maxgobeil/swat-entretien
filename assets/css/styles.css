@@ -34,12 +34,7 @@ header {
 }
 
 .logo {
-  font-size: 34px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border: 3px solid #8d8d8d;
-  padding: 0 15px;
+  height: 70px;
 }
 
 .contact-info {
@@ -63,7 +58,7 @@ header {
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("assets/images/man_cleaning_floor.jpg") center/cover;
+    url("../images/man_cleaning_floor.jpg") center/cover;
   display: flex;
   align-items: center;
   text-align: center;
@@ -94,6 +89,7 @@ header {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  font-size: 22px;
 }
 
 /* Services Section */
