@@ -34,10 +34,12 @@ header {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 2px;
+  border: 3px solid #8d8d8d;
+  padding: 0 15px;
 }
 
 .contact-info {
@@ -61,7 +63,7 @@ header {
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("assets/images/floor-buffer.jpg") center/cover;
+    url("assets/images/man_cleaning_floor.jpg") center/cover;
   display: flex;
   align-items: center;
   text-align: center;
@@ -136,13 +138,14 @@ header {
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
+  fill: #48832e;
 }
 
 /* Values Section */
 .values {
   padding: 100px 0;
   background: #222;
-  color: #fff;
+  color: #d6d6d6;
 }
 
 .values-grid {
@@ -156,14 +159,14 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
   gap: 40px;
 }
 
 .value-card h3 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #fff;
 }
 
 .value-card ul {
@@ -184,8 +187,10 @@ header {
 }
 
 .value-icon {
-  width: 125px;
-  height: 125px;
+  width: 90px;
+  height: 90px;
+  margin-right: 20px;
+  fill: #8d8d8d;
 }
 
 /* Floor Care Section */
@@ -224,7 +229,7 @@ header {
 footer {
   background: #222;
   padding: 60px 0;
-  color: #fff;
+  color: #d6d6d6;
   text-align: center;
 }
 
@@ -320,7 +325,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 10px;
   color: white;
   font-size: 13px;
   font-weight: 500;
