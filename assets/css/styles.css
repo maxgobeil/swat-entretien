@@ -18,7 +18,7 @@ body {
 
 /* Header */
 header {
-  background: #fff;
+  background: #ffffff;
   padding: 20px 0;
   position: fixed;
   width: 100%;
@@ -31,6 +31,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding-right: 100px;
 }
 
 .logo {
@@ -39,6 +41,7 @@ header {
 
 .contact-info {
   text-align: right;
+  margin-right: 20px;
 }
 
 .contact-info a {
@@ -62,7 +65,7 @@ header {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: #d5d5d5;
   margin-bottom: 0;
 }
 
@@ -266,7 +269,7 @@ footer {
 /* Language Switcher Styles */
 .lang-switch {
   position: absolute;
-  right: 30px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -365,6 +368,20 @@ input:checked + .slider:before {
 
   .section-title {
     font-size: 30px;
+  }
+
+  .value-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .value-text {
+    width: 100%;
+  }
+
+  .value-icon {
+    margin-right: 0;
   }
 }
 
