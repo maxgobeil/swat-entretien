@@ -1,16 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("langToggle");
+  // Hamburger Menu Functionality
+  const hamburgerMenu = document.getElementById("hamburgerMenu");
+  const mobileNav = document.getElementById("mobileNav");
 
-  // Set initial state based on current path
-  toggle.checked = !window.location.pathname.includes("/en/");
+  if (hamburgerMenu && mobileNav) {
+    hamburgerMenu.addEventListener("click", function () {
+      this.classList.toggle("active");
+      mobileNav.classList.toggle("active");
 
-  toggle.addEventListener("change", function () {
-    const newPath = this.checked ? "/" : "/en/";
-    window.location.href = newPath;
-  });
+      // Prevent body scroll when menu is open
+      if (mobileNav.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Close mobile menu when clicking on a nav link
+    const mobileNavLinks = mobileNav.querySelectorAll(".nav-link");
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        hamburgerMenu.classList.remove("active");
+        mobileNav.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", function (event) {
+      if (
+        !hamburgerMenu.contains(event.target) &&
+        !mobileNav.contains(event.target)
+      ) {
+        hamburgerMenu.classList.remove("active");
+        mobileNav.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Close mobile menu on window resize if screen becomes large
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1200) {
+        hamburgerMenu.classList.remove("active");
+        mobileNav.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
 });
-
-const lang = document.documentElement.lang || "en";
 
 let form = document.getElementById("contactForm");
 let formStatus = document.getElementById("formStatus");
