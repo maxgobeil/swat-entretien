@@ -98,3 +98,75 @@ form.addEventListener("submit", function (e) {
       formStatus.className = "form-status error";
     });
 });
+
+// Testimonials Carousel
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById("testimonialsTrack");
+  const dots = document.querySelectorAll(".dot");
+  let currentSlide = 0;
+  const slidesPerView =
+    window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1;
+  const totalSlides = Math.ceil(track.children.length / slidesPerView);
+
+  function updateCarousel() {
+    const slideWidth = 100 / slidesPerView;
+    track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentSlide);
+    });
+  }
+
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentSlide = index;
+      updateCarousel();
+    });
+  });
+
+  // Auto-advance carousel
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }, 5000);
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    const newSlidesPerView =
+      window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1;
+    if (newSlidesPerView !== slidesPerView) {
+      location.reload(); // Simple solution for responsive changes
+    }
+  });
+
+  // Initialize
+  updateCarousel();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    const header = question.querySelector(".faq-question-header");
+    const answer = question.querySelector(".faq-answer");
+
+    header.addEventListener("click", function () {
+      const isActive = question.classList.contains("active");
+
+      // Close all other questions
+      faqQuestions.forEach((q) => {
+        if (q !== question) {
+          q.classList.remove("active");
+        }
+      });
+
+      // Toggle current question
+      if (isActive) {
+        question.classList.remove("active");
+      } else {
+        question.classList.add("active");
+      }
+    });
+  });
+});
