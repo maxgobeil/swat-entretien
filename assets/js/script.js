@@ -73,7 +73,12 @@ class SWATApp {
   // FORM VALIDATION SYSTEM
   // ============================================================================
   initFormValidation() {
-    const forms = ["contactForm", "quoteForm", "careerApplicationForm"];
+    const forms = [
+      "homeContactForm",
+      "contactForm",
+      "quoteForm",
+      "careerApplicationForm",
+    ];
 
     forms.forEach((formId) => {
       const form = document.getElementById(formId);
@@ -180,8 +185,13 @@ class FormValidator {
 
     // Phone validation
     if (field.type === "tel" && value) {
-      const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-      if (!phoneRegex.test(value.replace(/[\s\-\(\)]/g, ""))) {
+      const cleanPhone = value.replace(/[\s\-\(\)]/g, "");
+      // Just check it has 7-15 digits
+      if (
+        cleanPhone.length < 7 ||
+        cleanPhone.length > 15 ||
+        !/^\d+$/.test(cleanPhone)
+      ) {
         isValid = false;
         errorMessage = "Veuillez entrer un numéro de téléphone valide";
       }
@@ -193,7 +203,7 @@ class FormValidator {
         isValid = false;
         errorMessage = "Ce champ doit contenir au moins 2 caractères";
       }
-      if (field.maxLength && value.length > field.maxLength) {
+      if (field.maxLength > 0 && value.length > field.maxLength) {
         isValid = false;
         errorMessage = `Ce champ ne peut pas dépasser ${field.maxLength} caractères`;
       }
@@ -273,6 +283,16 @@ class FormValidator {
     }
   }
 
+  getFormName() {
+    const formNames = {
+      homeContactForm: "home_contact",
+      contactForm: "contact_page",
+      quoteForm: "quote_request",
+      careerApplicationForm: "career_application",
+    };
+    return formNames[this.form.id] || "unknown";
+  }
+
   async handleFormSubmission() {
     try {
       const formData = new FormData(this.form);
@@ -283,6 +303,14 @@ class FormValidator {
       });
 
       if (response.ok) {
+        // Push event to GTM dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "form_submission_success",
+          form_id: this.form.id,
+          form_name: this.getFormName(),
+        });
+
         this.showSuccess();
         this.form.reset();
       } else {
