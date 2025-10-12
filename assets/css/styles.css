@@ -980,6 +980,7 @@ button a:hover {
 .contact-content-left-phone p {
   font-weight: 700;
   font-size: 1.4rem;
+  color: var(--accent-color);
 }
 
 .contact-form {
@@ -1616,17 +1617,14 @@ footer {
   filter: brightness(0) invert(1);
 }
 
-.career-benefit-content h3 {
+.career-benefit-content p {
   font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #222;
+  color: #666;
 }
 
-.career-benefit-content p {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.5;
+.benefit-content-bold {
+  font-weight: 600;
+  color: #222;
 }
 
 .career-positions {
@@ -1972,7 +1970,7 @@ footer {
   text-align: center;
   max-width: 80%;
   margin: 0 auto;
-  padding: var(--section-padding-full);
+  padding: var(--section-padding-half);
 }
 
 .quote-benefits-content h2 {
@@ -1984,7 +1982,8 @@ footer {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(275px, 400px));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -2538,6 +2537,17 @@ html {
   .quote-service-content {
     max-width: 65%;
   }
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(275px, 400px));
+  }
+  .service-overlay {
+    opacity: 1;
+    background: rgba(93, 163, 62, 0.85);
+  }
+
+  .service-overlay h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Tablet Landscape (1024px and below) */
@@ -2763,6 +2773,10 @@ html {
   .quote-form-content {
     max-width: 90%;
   }
+
+  .benefits-grid {
+    grid-template-columns: repeat(1, minmax(275px, 400px));
+  }
 }
 
 /* Mobile (480px and below) */
@@ -2828,5 +2842,9 @@ html {
     width: 40px;
     height: 40px;
     font-size: 1.5rem;
+  }
+  .service-overlay h3 {
+    font-size: 1.3rem;
+    padding: 15px;
   }
 }
