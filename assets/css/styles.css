@@ -1831,14 +1831,14 @@ footer {
 
 .quote-intro {
   margin-top: 100px;
-  padding: 80px 0 60px;
   background-color: #fff;
 }
 
 .quote-intro-content {
   text-align: center;
-  max-width: 800px;
+  max-width: 50%;
   margin: 0 auto;
+  padding: var(--section-padding-half);
 }
 
 .quote-intro-content p {
@@ -1848,13 +1848,13 @@ footer {
 }
 
 .quote-service {
-  padding: 60px 0;
   background-color: #f9f9f9;
 }
 
 .quote-service-content {
-  max-width: 800px;
+  max-width: 50%;
   margin: 0 auto;
+  padding: var(--section-padding-half);
 }
 
 .quote-service-text h2 {
@@ -1876,7 +1876,6 @@ footer {
 }
 
 .quote-form-section {
-  padding: 80px 0;
   background-color: #fff;
 }
 
@@ -1884,6 +1883,9 @@ footer {
   display: flex;
   gap: 4rem;
   align-items: flex-start;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: var(--section-padding-half);
 }
 
 .quote-form-left {
@@ -1968,6 +1970,9 @@ footer {
 
 .quote-benefits-content {
   text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: var(--section-padding-full);
 }
 
 .quote-benefits-content h2 {
@@ -2528,6 +2533,11 @@ html {
   .testimonials-content > p {
     width: 85%;
   }
+
+  .quote-intro-content,
+  .quote-service-content {
+    max-width: 65%;
+  }
 }
 
 /* Tablet Landscape (1024px and below) */
@@ -2682,6 +2692,16 @@ html {
   .faq-hero-content {
     max-width: 90%;
   }
+  .quote-form-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .quote-form-left {
+    width: 100%;
+  }
+  .quote-form-right {
+    width: 100%;
+  }
 }
 
 /* Tablet Portrait (768px and below) */
@@ -2735,6 +2755,12 @@ html {
   }
 
   .faq-contact-content {
+    max-width: 90%;
+  }
+
+  .quote-intro-content,
+  .quote-service-content,
+  .quote-form-content {
     max-width: 90%;
   }
 }
