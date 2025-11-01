@@ -254,11 +254,19 @@ class FormValidator {
 
   setupFormSubmission() {
     this.form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
       if (!this.validateForm()) {
-        e.preventDefault();
         this.showFormError("Veuillez corriger les erreurs dans le formulaire");
         return false;
       }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "form_submission_success",
+        form_id: this.form.id,
+        form_name: this.getFormName(),
+      });
 
       this.showLoadingState();
       this.handleFormSubmission();
@@ -285,10 +293,10 @@ class FormValidator {
 
   getFormName() {
     const formNames = {
-      homeContactForm: "home_contact",
-      contactForm: "contact_page",
-      quoteForm: "quote_request",
-      careerApplicationForm: "career_application",
+      homeContactForm: "homeContactForm",
+      contactForm: "contactForm",
+      quoteForm: "quoteForm",
+      careerApplicationForm: "careerApplicationForm",
     };
     return formNames[this.form.id] || "unknown";
   }
@@ -303,14 +311,6 @@ class FormValidator {
       });
 
       if (response.ok) {
-        // Push event to GTM dataLayer
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "form_submission_success",
-          form_id: this.form.id,
-          form_name: this.getFormName(),
-        });
-
         this.showSuccess();
         this.form.reset();
       } else {
